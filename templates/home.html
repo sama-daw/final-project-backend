@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍰 Dessert Shop API</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #C73B0F 0%, #8B2E0C 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+        }
+        .emoji {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 42px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+        .status {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        .endpoints {
+            text-align: left;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+        .endpoints h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        .endpoint {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .endpoint:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .endpoint a {
+            color: #C73B0F;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .endpoint a:hover {
+            text-decoration: underline;
+        }
+        .version {
+            margin-top: 30px;
+            color: #999;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="emoji">🍰</div>
+        <h1>Dessert Shop API</h1>
+        <p class="subtitle">Backend API for Dessert Shop E-commerce</p>
+        
+        <div class="status">✅ Server is Running</div>
+        
+        <div class="endpoints">
+            <h3>📚 Available Endpoints</h3>
+            
+            <div class="endpoint">
+                📦 <a href="/api/products/" target="_blank">Products API</a>
+                <p style="color: #999; font-size: 13px; margin-top: 5px;">View and manage all dessert products</p>
+            </div>
+            
+            <div class="endpoint">
+                🛒 <a href="/api/orders/" target="_blank">Orders API</a>
+                <p style="color: #999; font-size: 13px; margin-top: 5px;">Manage customer orders</p>
+            </div>
+            
+            <div class="endpoint">
+                ⚙️ <a href="/admin/" target="_blank">Admin Panel</a>
+                <p style="color: #999; font-size: 13px; margin-top: 5px;">Backend administration interface</p>
+            </div>
+            
+            <div class="endpoint">
+                📄 <a href="/api/" target="_blank">API Documentation</a>
+                <p style="color: #999; font-size: 13px; margin-top: 5px;">REST framework browsable API</p>
+            </div>
+        </div>
+        
+        <p class="version">Version 1.0 • Built with Django & Django REST Framework</p>
+    </div>
+</body>
+</html>
