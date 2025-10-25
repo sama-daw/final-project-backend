@@ -5,7 +5,7 @@ from .models import Product, Order, OrderItem
 
 
 class ProductSerializer(serializers.ModelSerializer):
-    # ✅ جعل حقول الصور اختيارية عند التحديث
+   
     image_thumbnail = serializers.ImageField(required=False, allow_null=True)
     image_mobile = serializers.ImageField(required=False, allow_null=True)
     image_tablet = serializers.ImageField(required=False, allow_null=True)
@@ -32,7 +32,7 @@ class ProductSerializer(serializers.ModelSerializer):
         """
         ✅ عند التحديث، إذا لم تُرسل صورة جديدة، احتفظ بالصورة القديمة
         """
-        # إزالة الصور الفارغة من البيانات المُراد تحديثها
+     
         for field in ['image_thumbnail', 'image_mobile', 'image_tablet', 'image_desktop']:
             if field in validated_data and validated_data[field] is None:
                 validated_data.pop(field)

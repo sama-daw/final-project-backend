@@ -1,13 +1,13 @@
 from django.contrib import admin
 from .models import Product, Order, OrderItem
 
-# ✅ تخصيص عناوين الـ Admin Panel
+
 admin.site.site_header = "🍰 Dessert Shop Admin Panel"
 admin.site.site_title = "Admin"
 admin.site.index_title = "Welcome to Dessert Shop Management"
 
 
-# ✅ Product Admin (محسّن)
+
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ("id", "name", "price", "stock", "is_active", "created_at", "product_status")
@@ -44,7 +44,7 @@ class ProductAdmin(admin.ModelAdmin):
     product_status.short_description = "Status"
 
 
-# ✅ OrderItem Inline (محسّن)
+
 class OrderItemInline(admin.TabularInline):
     model = OrderItem
     extra = 0
@@ -58,10 +58,10 @@ class OrderItemInline(admin.TabularInline):
     get_product_price.short_description = "Unit Price"
 
 
-# ✅ Order Admin (محسّن مع العنوان)
+
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    # ✅ ضفنا address في القائمة
+   
     list_display = ("id", "customer_name", "phone", "get_short_address", "get_order_items", "get_total", "status", "created_at", "order_badge")
     list_filter = ("status", "created_at")
     search_fields = ("customer_name", "phone", "address")
@@ -79,7 +79,7 @@ class OrderAdmin(admin.ModelAdmin):
         }),
     )
     
-    # ✅ دالة جديدة لعرض العنوان مختصر
+  
     def get_short_address(self, obj):
         """عرض العنوان مختصر (أول 30 حرف)"""
         if obj.address:
